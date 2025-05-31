@@ -1,0 +1,17 @@
+com\proyecto_backend\reservaVisita\application\ReservaVisitaControllerTest$TestConfig.class
+com\proyecto_backend\usuario\application\UsuarioControllerTest$TestConfig.class
+com\proyecto_backend\publicacion\application\PublicacionControllerTest.class
+com\proyecto_backend\transaccion\domain\TransaccionServiceTest.class
+com\proyecto_backend\usuario\domain\UsuarioServiceTest.class
+com\proyecto_backend\usuario\application\UsuarioControllerTest.class
+com\proyecto_backend\publicacion\application\PublicacionControllerTest$TestConfig.class
+com\proyecto_backend\reservaVisita\domain\ReservaVisitaServiceTest.class
+com\proyecto_backend\reservaVisita\application\ReservaVisitaControllerTest.class
+com\proyecto_backend\propiedad\application\PropiedadControllerTest.class
+com\proyecto_backend\transaccion\application\TransaccionControllerTest.class
+com\proyecto_backend\config\TestSecurityConfig.class
+com\proyecto_backend\publicacion\domain\PublicacionServiceTest.class
+com\proyecto_backend\transaccion\application\TransaccionControllerTest$TestConfig.class
+com\proyecto_backend\ProyectoBackendApplicationTests.class
+com\proyecto_backend\propiedad\domain\PropiedadServiceTest.class
+com\proyecto_backend\propiedad\application\PropiedadControllerTest$TestConfig.class

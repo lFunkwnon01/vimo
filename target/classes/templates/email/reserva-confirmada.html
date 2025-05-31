@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 25px;
+            background: #f9f9f9;
+        }
+        .reservation-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #27ae60;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .reservation-card h2 {
+            color: #27ae60;
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .qr-info {
+            background: linear-gradient(135deg, #e8f5e8, #d5f4d5);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #27ae60;
+            text-align: center;
+        }
+        .qr-info h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+        .important {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #666;
+            background: #ecf0f1;
+            border-radius: 0 0 8px 8px;
+        }
+        .info-row {
+            margin: 12px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .highlight-id {
+            background: #27ae60;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>✅ Reserva Confirmada</h1>
+    </div>
+    <div class="content">
+        <p>Estimado/a <strong>{{nombre_cliente}} {{apellido_cliente}}</strong>,</p>
+        <p>Tu reserva de visita ha sido confirmada exitosamente. Aquí tienes todos los detalles:</p>
+
+        <div class="reservation-card">
+            <h2>📋 Detalles de la Reserva</h2>
+            <div class="info-row"><strong>🏠 Propiedad:</strong> {{titulo_propiedad}}</div>
+            <div class="info-row"><strong>📅 Fecha y Hora:</strong> {{fecha_hora}}</div>
+            <div class="info-row"><strong>📍 Dirección:</strong> {{direccion}}</div>
+            <div class="info-row"><strong>👨‍💼 Agente:</strong> {{nombre_agente}}</div>
+            <div class="info-row"><strong>📞 Teléfono del Agente:</strong> {{telefono_agente}}</div>
+            <div class="info-row"><strong>✉️ Email del Agente:</strong> {{email_agente}}</div>
+            <div class="info-row"><strong>💬 Comentarios:</strong> {{comentarios}}</div>
+            <div class="info-row"><strong>🔢 ID de Reserva:</strong> <span class="highlight-id">#{{id_reserva}}</span></div>
+        </div>
+
+        <div class="qr-info">
+            <h3>📱 Código QR de Verificación</h3>
+            <p>Hemos adjuntado un código QR a este correo. Preséntalo al agente el día de la visita para confirmar tu identidad.</p>
+        </div>
+
+        <div class="important">
+            <p><strong>⚠️ Importante:</strong> Por favor, llega puntual a la cita. Si necesitas cancelar o reprogramar, contacta al agente con al menos 2 horas de anticipación.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Tu Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+</div>
+</body>
+</html>

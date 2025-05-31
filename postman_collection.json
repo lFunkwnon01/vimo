@@ -1,0 +1,793 @@
+
+{
+  "info": {
+    "name": "Proyecto Backend API - Completo",
+    "_postman_id": "uuid-generated-completo",
+    "description": "Colección completa para probar todos los endpoints del backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ChatMensaje",
+      "description": "Endpoints para ChatMensaje",
+      "item": [
+        {
+          "name": "Crear ChatMensaje",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"remitenteId\": 1,\n  \"destinatarioId\": 2,\n  \"agenteId\": 3,\n  \"propiedadId\": 4,\n  \"titulo\": \"Consulta sobre propiedad\",\n  \"mensaje\": \"Hola, estoy interesado en esta propiedad.\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener ChatMensaje por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes/1", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todos los ChatMensajes",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar ChatMensaje por ID",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes/1", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar ChatMensajes por propiedad y agente",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/chat-mensajes/por-propiedad-agente?propiedadId=4&agenteId=3",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat-mensajes", "por-propiedad-agente"],
+              "query": [
+                { "key": "propiedadId", "value": "4" },
+                { "key": "agenteId", "value": "3" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar ChatMensajes por cliente y propiedad",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/chat-mensajes/por-cliente-propiedad?clienteId=1&propiedadId=4",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "chat-mensajes", "por-cliente-propiedad"],
+              "query": [
+                { "key": "clienteId", "value": "1" },
+                { "key": "propiedadId", "value": "4" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar ChatMensajes por agente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes/por-agente/3", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes", "por-agente", "3"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Marcar ChatMensaje como leído",
+          "request": {
+            "method": "PATCH",
+            "url": { "raw": "{{baseUrl}}/api/chat-mensajes/1/leido", "host": ["{{baseUrl}}"], "path": ["api", "chat-mensajes", "1", "leido"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PreferenciaNotificacion",
+      "description": "Endpoints para PreferenciaNotificacion",
+      "item": [
+        {
+          "name": "Crear PreferenciaNotificacion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"regionInteres\": \"Lima\",\n  \"distritoInteres\": \"Miraflores,Barranco\",\n  \"regionUsuario\": \"Junín\",\n  \"distritoUsuario\": \"Huancayo\",\n  \"radioKm\": 10.0,\n  \"latitudCentro\": -12.0464,\n  \"longitudCentro\": -77.0428,\n  \"tipoBusqueda\": \"POR_UBICACION\",\n  \"tipo\": \"VENTA\",\n  \"activa\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener PreferenciaNotificacion por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion/1", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todas las PreferenciasNotificacion",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar PreferenciasNotificacion por usuario",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion/por-usuario/1", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion", "por-usuario", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar por región de interés",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/preferencias-notificacion/por-region-interes?region=Lima&tipo=VENTA",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "preferencias-notificacion", "por-region-interes"],
+              "query": [
+                { "key": "region", "value": "Lima" },
+                { "key": "tipo", "value": "VENTA" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar por distrito de interés",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/preferencias-notificacion/por-distrito-interes?distrito=Miraflores&tipo=VENTA",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "preferencias-notificacion", "por-distrito-interes"],
+              "query": [
+                { "key": "distrito", "value": "Miraflores" },
+                { "key": "tipo", "value": "VENTA" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar por tipo de búsqueda",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/preferencias-notificacion/por-tipo-busqueda?tipoBusqueda=POR_UBICACION&tipo=VENTA",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "preferencias-notificacion", "por-tipo-busqueda"],
+              "query": [
+                { "key": "tipoBusqueda", "value": "POR_UBICACION" },
+                { "key": "tipo", "value": "VENTA" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar PreferenciaNotificacion",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion/1", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"regionInteres\": \"Lima\",\n  \"distritoInteres\": \"Miraflores,Barranco\",\n  \"regionUsuario\": \"Junín\",\n  \"distritoUsuario\": \"Huancayo\",\n  \"radioKm\": 15.0,\n  \"latitudCentro\": -12.0464,\n  \"longitudCentro\": -77.0428,\n  \"tipoBusqueda\": \"AMBAS\",\n  \"tipo\": \"ALQUILER\",\n  \"activa\": true\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar PreferenciaNotificacion",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/preferencias-notificacion/1", "host": ["{{baseUrl}}"], "path": ["api", "preferencias-notificacion", "1"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Propiedad",
+      "description": "Endpoints para Propiedad",
+      "item": [
+        {
+          "name": "Crear Propiedad",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/propiedades", "host": ["{{baseUrl}}"], "path": ["api", "propiedades"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Casa en Miraflores\",\n  \"descripcion\": \"Hermosa casa con vista al mar\",\n  \"direccion\": \"Av. Larco 123\",\n  \"tipo\": \"CASA\",\n  \"metrosCuadrados\": 120.5,\n  \"precio\": 350000.0,\n  \"estado\": \"DISPONIBLE\",\n  \"propietarioId\": 1,\n  \"imagenes\": \"https://example.com/img1.jpg,https://example.com/img2.jpg\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Propiedad por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/1", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todas las Propiedades",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades", "host": ["{{baseUrl}}"], "path": ["api", "propiedades"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Propiedad",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/propiedades/1", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Casa en Miraflores - Actualizada\",\n  \"descripcion\": \"Casa con piscina y jardín\",\n  \"direccion\": \"Av. Larco 123\",\n  \"tipo\": \"CASA\",\n  \"metrosCuadrados\": 130.0,\n  \"precio\": 370000.0,\n  \"estado\": \"DISPONIBLE\",\n  \"propietarioId\": 1,\n  \"imagenes\": \"https://example.com/img1.jpg,https://example.com/img2.jpg\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Propiedad",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/1", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades por propietario",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/por-propietario/1", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "por-propietario", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades por estado",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/por-estado?estado=DISPONIBLE", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "por-estado"], "query": [{ "key": "estado", "value": "DISPONIBLE" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades por tipo",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/por-tipo?tipo=CASA", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "por-tipo"], "query": [{ "key": "tipo", "value": "CASA" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades por propietario y estado",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/propiedades/por-propietario-estado?propietarioId=1&estado=DISPONIBLE",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "propiedades", "por-propietario-estado"],
+              "query": [
+                { "key": "propietarioId", "value": "1" },
+                { "key": "estado", "value": "DISPONIBLE" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades verificadas",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/verificadas", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "verificadas"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Propiedades no verificadas",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/no-verificadas", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "no-verificadas"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Validar dirección",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/validar-direccion?direccion=Av.%20Larco%20123", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "validar-direccion"], "query": [{ "key": "direccion", "value": "Av. Larco 123" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Autocompletar dirección",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/autocompletar?input=Av.%20Larco", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "autocompletar"], "query": [{ "key": "input", "value": "Av. Larco" }] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Publicacion",
+      "description": "Endpoints para Publicacion",
+      "item": [
+        {
+          "name": "Crear Publicacion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/publicaciones", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"creadorId\": 2,\n  \"estado\": \"ACTIVA\",\n  \"fechaInicio\": \"2024-06-01\",\n  \"fechaFin\": \"2024-12-31\",\n  \"tipoTransaccion\": \"VENTA\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Publicacion por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/1", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todas las Publicaciones",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Publicacion",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/1", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"creadorId\": 2,\n  \"estado\": \"INACTIVA\",\n  \"fechaInicio\": \"2024-06-01\",\n  \"fechaFin\": \"2024-12-31\",\n  \"tipoTransaccion\": \"ALQUILER\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Publicacion",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/1", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Publicaciones por propiedad",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/por-propiedad/1", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "por-propiedad", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Publicaciones por agente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/por-agente/2", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "por-agente", "2"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar agente a Publicacion",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/1/agentes/2", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "1", "agentes", "2"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Remover agente de Publicacion",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/publicaciones/1/agentes/2", "host": ["{{baseUrl}}"], "path": ["api", "publicaciones", "1", "agentes", "2"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ReservaVisita",
+      "description": "Endpoints para ReservaVisita",
+      "item": [
+        {
+          "name": "Crear ReservaVisita",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"clienteId\": 3,\n  \"agenteId\": 2,\n  \"fechaHora\": \"2024-06-15T10:00:00\",\n  \"estado\": \"PENDIENTE\",\n  \"comentarios\": \"Me gustaría visitar esta propiedad el sábado.\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener ReservaVisita por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/1", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todas las ReservasVisita",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar ReservaVisita",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/1", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"clienteId\": 3,\n  \"agenteId\": 2,\n  \"fechaHora\": \"2024-06-15T11:00:00\",\n  \"estado\": \"CONFIRMADA\",\n  \"comentarios\": \"Cambio de hora a las 11am.\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar ReservaVisita",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/1", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Reservas por propiedad",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/por-propiedad/1", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "por-propiedad", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Reservas por cliente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/por-cliente/3", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "por-cliente", "3"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Reservas por agente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/por-agente/2", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "por-agente", "2"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Reservas por propiedad y fecha",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/reservas-visita/por-propiedad-fecha?propiedadId=1&fecha=2024-06-15",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "reservas-visita", "por-propiedad-fecha"],
+              "query": [
+                { "key": "propiedadId", "value": "1" },
+                { "key": "fecha", "value": "2024-06-15" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Confirmar asistencia a Reserva",
+          "request": {
+            "method": "PUT",
+            "url": { "raw": "{{baseUrl}}/api/reservas-visita/1/confirmar-asistencia", "host": ["{{baseUrl}}"], "path": ["api", "reservas-visita", "1", "confirmar-asistencia"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "SolicitudVerificacion",
+      "description": "Endpoints para SolicitudVerificacion",
+      "item": [
+        {
+          "name": "Crear SolicitudVerificacion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/solicitudes-verificacion", "host": ["{{baseUrl}}"], "path": ["api", "solicitudes-verificacion"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"documentoAdjunto\": \"https://example.com/documento.pdf\",\n  \"comentarios\": \"Documento para verificación\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener SolicitudVerificacion por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/solicitudes-verificacion/1", "host": ["{{baseUrl}}"], "path": ["api", "solicitudes-verificacion", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Solicitudes por usuario",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/solicitudes-verificacion/usuario/1", "host": ["{{baseUrl}}"], "path": ["api", "solicitudes-verificacion", "usuario", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar estado de SolicitudVerificacion",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/solicitudes-verificacion/1/estado?estado=APROBADA&adminId=2&comentarios=Verificación%20exitosa",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "solicitudes-verificacion", "1", "estado"],
+              "query": [
+                { "key": "estado", "value": "APROBADA" },
+                { "key": "adminId", "value": "2" },
+                { "key": "comentarios", "value": "Verificación exitosa" }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transaccion",
+      "description": "Endpoints para Transaccion",
+      "item": [
+        {
+          "name": "Crear Transaccion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/transacciones", "host": ["{{baseUrl}}"], "path": ["api", "transacciones"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"clienteId\": 3,\n  \"agenteId\": 2,\n  \"tipo\": \"VENTA\",\n  \"monto\": 350000.0,\n  \"comisionAgente\": 5000.0,\n  \"detalles\": \"Pago completo realizado\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Transaccion por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/transacciones/1", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todas las Transacciones",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/transacciones", "host": ["{{baseUrl}}"], "path": ["api", "transacciones"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Transaccion",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/transacciones/1", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propiedadId\": 1,\n  \"clienteId\": 3,\n  \"agenteId\": 2,\n  \"tipo\": \"ALQUILER\",\n  \"monto\": 1500.0,\n  \"comisionAgente\": 200.0,\n  \"detalles\": \"Contrato renovado\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Transaccion",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/transacciones/1", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Transacciones por cliente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/transacciones/por-cliente/3", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "por-cliente", "3"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Transacciones por agente",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/transacciones/por-agente/2", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "por-agente", "2"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Transacciones por propiedad",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/transacciones/por-propiedad/1", "host": ["{{baseUrl}}"], "path": ["api", "transacciones", "por-propiedad", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Transacciones por agente y mes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/transacciones/por-agente-mes?agenteId=2&anio=2024&mes=6",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "transacciones", "por-agente-mes"],
+              "query": [
+                { "key": "agenteId", "value": "2" },
+                { "key": "anio", "value": "2024" },
+                { "key": "mes", "value": "6" }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuario",
+      "description": "Endpoints para Usuario",
+      "item": [
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/usuarios", "host": ["{{baseUrl}}"], "path": ["api", "usuarios"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Perez\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"password123\",\n  \"telefono\": \"987654321\",\n  \"rol\": \"CLIENTE\",\n  \"documentoVerificacion\": \"https://example.com/doc.pdf\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Usuario por ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/1", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar todos los Usuarios",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios", "host": ["{{baseUrl}}"], "path": ["api", "usuarios"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{baseUrl}}/api/usuarios/1", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "1"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Perez\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"newpassword123\",\n  \"telefono\": \"987654321\",\n  \"rol\": \"AGENTE\",\n  \"documentoVerificacion\": \"https://example.com/doc_updated.pdf\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Usuario",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/1", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Usuario por email",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/por-email?email=juan.perez@example.com", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "por-email"], "query": [{ "key": "email", "value": "juan.perez@example.com" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Usuarios por rol",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/por-rol?rol=CLIENTE", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "por-rol"], "query": [{ "key": "rol", "value": "CLIENTE" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Usuarios por nombre",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/buscar-nombre?nombre=Juan", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "buscar-nombre"], "query": [{ "key": "nombre", "value": "Juan" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Usuarios activos",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/usuarios/activos", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "activos"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "UbicacionGeografica",
+      "description": "Endpoints para UbicacionGeografica (expuestos en PropiedadController)",
+      "item": [
+        {
+          "name": "Validar dirección",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/validar-direccion?direccion=Av.%20Larco%20123", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "validar-direccion"], "query": [{ "key": "direccion", "value": "Av. Larco 123" }] }
+          },
+          "response": []
+        },
+        {
+          "name": "Autocompletar dirección",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/propiedades/autocompletar?input=Av.%20Larco", "host": ["{{baseUrl}}"], "path": ["api", "propiedades", "autocompletar"], "query": [{ "key": "input", "value": "Av. Larco" }] }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

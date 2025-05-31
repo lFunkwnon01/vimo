@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitud de Verificación Pendiente</title>
+    <style>
+        body { font-family: Verdana, sans-serif; background: #fff8e1; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ffecb3; }
+        h1 { color: #f9a825; }
+        p { color: #6d4c41; line-height: 1.5; }
+        .info { background: #fff3e0; padding: 15px; border-radius: 5px; margin-top: 20px; }
+        a.button { background: #f9a825; color: #4e342e; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        .footer { font-size: 12px; color: #a1887f; margin-top: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Nueva Solicitud de Verificación</h1>
+    <p>Estimado administrador,</p>
+    <p>El usuario <strong>{{nombre_usuario}}</strong> ha solicitado verificación para el rol de <strong>{{rol_solicitado}}</strong>.</p>
+    <div class="info">
+        <p><strong>Email:</strong> {{email_usuario}}</p>
+        <p><strong>Documento adjunto:</strong> {{documento_verificacion}}</p>
+    </div>
+    <p>Por favor, revisa la documentación y procede con la aprobación o rechazo.</p>
+    <a href="https://tu-sitio.com/admin/verificaciones" class="button">Revisar Solicitudes</a>
+    <p class="footer">Este es un mensaje automático, no responder.</p>
+</div>
+</body>
+</html>

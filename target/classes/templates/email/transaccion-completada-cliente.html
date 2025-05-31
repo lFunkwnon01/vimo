@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confirmación de Transacción</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f7; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: #ffffff; padding: 20px; border-radius: 8px; }
+        h1 { color: #2a9d8f; }
+        p { color: #555555; line-height: 1.5; }
+        .details { background: #e9f5f2; padding: 15px; border-radius: 5px; margin-top: 20px; }
+        .footer { font-size: 12px; color: #999999; margin-top: 30px; text-align: center; }
+        a.button { background: #2a9d8f; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>¡Transacción Completada!</h1>
+    <p>Hola <strong>{{nombre_cliente}}</strong>,</p>
+    <p>Te confirmamos que la transacción para la propiedad <strong>{{titulo_propiedad}}</strong> ha sido completada exitosamente.</p>
+    <div class="details">
+        <p><strong>Monto:</strong> {{monto}}</p>
+        <p><strong>Fecha:</strong> {{fecha}}</p>
+    </div>
+    <p>Gracias por confiar en nosotros para tu operación inmobiliaria.</p>
+    <a href="https://tu-sitio.com/mis-transacciones" class="button">Ver mis transacciones</a>
+    <p class="footer">Si no realizaste esta operación, por favor contacta con soporte inmediatamente.</p>
+</div>
+</body>
+</html>

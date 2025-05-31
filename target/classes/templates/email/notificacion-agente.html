@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Reserva de Visita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 25px;
+            background: #f9f9f9;
+        }
+        .client-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .client-card h2, .client-card h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+        .client-card h2 {
+            font-size: 20px;
+        }
+        .client-card h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #666;
+            background: #ecf0f1;
+            border-radius: 0 0 8px 8px;
+        }
+        .reminder {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        .info-row {
+            margin: 12px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .highlight-id {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        .urgent {
+            background: #ffebee;
+            border: 2px solid #e74c3c;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🏠 Nueva Reserva de Visita</h1>
+    </div>
+    <div class="content">
+        <p>Hola <strong>{{nombre_agente}} {{apellido_agente}}</strong>,</p>
+        <p>Tienes una nueva reserva de visita programada. Aquí están los detalles:</p>
+
+        <div class="client-card">
+            <h2>👤 Información del Cliente</h2>
+            <div class="info-row"><strong>Nombre:</strong> {{nombre_cliente}}</div>
+            <div class="info-row"><strong>📞 Teléfono:</strong> {{telefono_cliente}}</div>
+            <div class="info-row"><strong>✉️ Email:</strong> {{email_cliente}}</div>
+
+            <h3>🏠 Detalles de la Visita</h3>
+            <div class="info-row"><strong>Propiedad:</strong> {{titulo_propiedad}}</div>
+            <div class="info-row urgent"><strong>📅 Fecha y Hora:</strong> {{fecha_hora}}</div>
+            <div class="info-row"><strong>📍 Dirección:</strong> {{direccion}}</div>
+            <div class="info-row"><strong>💬 Comentarios del Cliente:</strong> {{comentarios}}</div>
+            <div class="info-row"><strong>🔢 ID de Reserva:</strong> <span class="highlight-id">#{{id_reserva}}</span></div>
+        </div>
+
+        <p style="text-align: center; margin: 30px 0;">
+            <a href="{{link_confirmar}}" class="button">Confirmar Asistencia</a>
+        </p>
+
+        <div class="reminder">
+            <p><strong>📋 Recordatorio:</strong> Contacta al cliente antes de la visita para confirmar la cita y proporcionar cualquier información adicional necesaria.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Tu Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+</div>
+</body>
+</html>

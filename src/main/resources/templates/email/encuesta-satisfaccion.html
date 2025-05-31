@@ -1,0 +1,161 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tu opinión es importante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 25px;
+            background: #f9f9f9;
+        }
+        .survey-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #f39c12;
+        }
+        .survey-card h2 {
+            color: #f39c12;
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .property-highlight {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #f39c12;
+            font-weight: bold;
+            color: #e65100;
+        }
+        .button {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #666;
+            background: #ecf0f1;
+            border-radius: 0 0 8px 8px;
+        }
+        .anonymous-note {
+            background: linear-gradient(135deg, #e8f4fd, #d6eaf8);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        .benefits-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #dee2e6;
+        }
+        .benefits-list h3 {
+            color: #f39c12;
+            margin-top: 0;
+            text-align: center;
+        }
+        .benefit-item {
+            margin: 10px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #f39c12;
+        }
+        .stars {
+            font-size: 24px;
+            color: #f39c12;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📝 Tu Opinión es Importante</h1>
+    </div>
+    <div class="content">
+        <p>Hola <strong>{{nombre_cliente}}</strong>,</p>
+
+        <div class="survey-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <h2>¿Cómo fue tu experiencia?</h2>
+
+            <div class="property-highlight">
+                Visita a: {{titulo_propiedad}}
+            </div>
+
+            <p>Nos encantaría conocer tu opinión sobre la visita que realizaste.</p>
+            <p>Tu feedback nos ayuda a mejorar nuestro servicio y brindar una mejor experiencia a futuros clientes.</p>
+
+            <div class="benefits-list">
+                <h3>🎯 Tu opinión nos ayuda a:</h3>
+                <div class="benefit-item">✅ Mejorar la calidad del servicio</div>
+                <div class="benefit-item">✅ Capacitar mejor a nuestros agentes</div>
+                <div class="benefit-item">✅ Optimizar el proceso de visitas</div>
+                <div class="benefit-item">✅ Ofrecer mejores propiedades</div>
+            </div>
+
+            <p style="margin: 30px 0;">
+                <a href="{{link_encuesta}}" class="button">Completar Encuesta (2 minutos)</a>
+            </p>
+        </div>
+
+        <div class="anonymous-note">
+            <p style="text-align: center; margin: 0; font-weight: bold;">
+                🔒 La encuesta es completamente anónima y solo tomará 2 minutos de tu tiempo.
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Tu Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+</div>
+</body>
+</html>
