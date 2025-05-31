@@ -4,9 +4,9 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: vimo_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: chivacola123
     ports:
       - "5432:5432"
     volumes:
@@ -26,11 +26,11 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
-      SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
+      DB_NAME: vimo_db
+      DB_USER: postgres
+      DB_PASSWORD: chivacola123
+      SPRING_MAIL_USERNAME: fabricio.ladera@utec.edu.pe
+      SPRING_MAIL_PASSWORD: lsqf vdki igzh cmln
     networks:
       - vimo_network
 
